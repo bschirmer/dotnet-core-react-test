@@ -9,3 +9,5 @@ E:\Development\PatientZero\PZCheesy.Services\obj\Debug\netstandard2.0\PZCheesy.S
 E:\Development\PatientZero\PZCheesy.Services\obj\Debug\netstandard2.0\PZCheesy.Services.csproj.CopyComplete
 E:\Development\PatientZero\PZCheesy.Services\obj\Debug\netstandard2.0\PZCheesy.Services.dll
 E:\Development\PatientZero\PZCheesy.Services\obj\Debug\netstandard2.0\PZCheesy.Services.pdb
+E:\Development\PatientZero\PZCheesy.Services\bin\Debug\netstandard2.0\PZCheesy.Data.dll
+E:\Development\PatientZero\PZCheesy.Services\bin\Debug\netstandard2.0\PZCheesy.Data.pdb

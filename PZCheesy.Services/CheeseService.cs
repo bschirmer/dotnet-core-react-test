@@ -1,10 +1,18 @@
-﻿using System;
+﻿using PZCheesy.Core.Models;
+using PZCheesy.Core.Services;
+using PZCheesy.Data;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace PZCheesy.Services
 {
-    class CheeseService
+    public class CheeseService : ICheeseService
     {
+        public CheeseService() { }
+
+        public List<Cheese> GetAllCheese()
+        {
+            return CheeseData.GetAllCheese();
+        }
     }
 }

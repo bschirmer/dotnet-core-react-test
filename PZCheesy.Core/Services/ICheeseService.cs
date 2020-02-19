@@ -8,7 +8,7 @@ namespace PZCheesy.Core.Services
 {
     public interface ICheeseService
     {
-        Task<IEnumerable<Cheese>> GetAllCheeseAsync();
+        List<Cheese> GetAllCheese();
 
     }
 }

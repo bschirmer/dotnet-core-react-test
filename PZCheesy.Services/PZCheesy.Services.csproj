@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PZCheesy.Core\PZCheesy.Core.csproj" />
+    <ProjectReference Include="..\PZCheesy.Data\PZCheesy.Data.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

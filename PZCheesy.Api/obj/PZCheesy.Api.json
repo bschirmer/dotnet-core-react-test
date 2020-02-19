@@ -5,10 +5,10 @@
     "version": "v1"
   },
   "paths": {
-    "/WeatherForecast": {
+    "/api/Cheese": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Cheese"
         ],
         "responses": {
           "200": {
@@ -18,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Cheese"
                   }
                 }
               },
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Cheese"
                   }
                 }
               },
@@ -34,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Cheese"
                   }
                 }
               }
@@ -46,23 +46,38 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "Cheese": {
         "type": "object",
         "properties": {
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "temperatureC": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
+          "name": {
+            "type": "string",
+            "nullable": true
           },
-          "summary": {
+          "colour": {
+            "type": "string",
+            "nullable": true
+          },
+          "flavour": {
+            "type": "string",
+            "nullable": true
+          },
+          "texture": {
+            "type": "string",
+            "nullable": true
+          },
+          "aroma": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "pictureRef": {
             "type": "string",
             "nullable": true
           }
