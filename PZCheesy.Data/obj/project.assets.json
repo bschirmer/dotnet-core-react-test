@@ -285,11 +285,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\Development\\PatientZero\\PZCheesy.Data\\PZCheesy.Data.csproj",
+      "projectUniqueName": "E:\\Development\\PatientZero\\PZCheesy.Data\\PZCheesy.Data.csproj",
       "projectName": "PZCheesy.Data",
-      "projectPath": "e:\\Development\\PatientZero\\PZCheesy.Data\\PZCheesy.Data.csproj",
+      "projectPath": "E:\\Development\\PatientZero\\PZCheesy.Data\\PZCheesy.Data.csproj",
       "packagesPath": "C:\\Users\\bmsch\\.nuget\\packages\\",
-      "outputPath": "e:\\Development\\PatientZero\\PZCheesy.Data\\obj\\",
+      "outputPath": "E:\\Development\\PatientZero\\PZCheesy.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -308,8 +308,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "e:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj": {
-              "projectPath": "e:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj"
+            "E:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj": {
+              "projectPath": "E:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj"
             }
           }
         }
