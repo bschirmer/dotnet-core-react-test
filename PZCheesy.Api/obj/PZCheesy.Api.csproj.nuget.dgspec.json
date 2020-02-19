@@ -51,6 +51,18 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.0.0-rc3, )"
@@ -230,6 +242,9 @@
             "projectReferences": {
               "E:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj": {
                 "projectPath": "E:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj"
+              },
+              "E:\\Development\\PatientZero\\PZCheesy.Data\\PZCheesy.Data.csproj": {
+                "projectPath": "E:\\Development\\PatientZero\\PZCheesy.Data\\PZCheesy.Data.csproj"
               }
             }
           }

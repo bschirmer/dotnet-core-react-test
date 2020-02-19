@@ -9,7 +9,10 @@ namespace PZCheesy.Core.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Colour { get; set; }
-        public float Price { get; set; }
+        public string Flavour { get; set; }
+        public string Texture { get; set; }
+        public string Aroma { get; set; }
+        public decimal Price { get; set; }
         public string PictureRef { get; set; }
 
     }

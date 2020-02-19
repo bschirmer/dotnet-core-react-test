@@ -59,6 +59,19 @@
         "runtime": {
           "bin/placeholder/PZCheesy.Core.dll": {}
         }
+      },
+      "PZCheesy.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "PZCheesy.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PZCheesy.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PZCheesy.Data.dll": {}
+        }
       }
     }
   },
@@ -270,12 +283,18 @@
       "type": "project",
       "path": "../PZCheesy.Core/PZCheesy.Core.csproj",
       "msbuildProject": "../PZCheesy.Core/PZCheesy.Core.csproj"
+    },
+    "PZCheesy.Data/1.0.0": {
+      "type": "project",
+      "path": "../PZCheesy.Data/PZCheesy.Data.csproj",
+      "msbuildProject": "../PZCheesy.Data/PZCheesy.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "PZCheesy.Core >= 1.0.0"
+      "PZCheesy.Core >= 1.0.0",
+      "PZCheesy.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -310,6 +329,9 @@
           "projectReferences": {
             "E:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj": {
               "projectPath": "E:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj"
+            },
+            "E:\\Development\\PatientZero\\PZCheesy.Data\\PZCheesy.Data.csproj": {
+              "projectPath": "E:\\Development\\PatientZero\\PZCheesy.Data\\PZCheesy.Data.csproj"
             }
           }
         }
