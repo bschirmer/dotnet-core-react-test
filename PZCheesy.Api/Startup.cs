@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Swagger;
+
 
 namespace PZCheesy.Api
 {
@@ -26,6 +29,10 @@ namespace PZCheesy.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "PZCheesy", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +52,16 @@ namespace PZCheesy.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            /**
+            * Swagger code was borrowed from https://medium.com/swlh/building-a-nice-multi-layer-net-core-3-api-c68a9ef16368
+            */
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+            c.RoutePrefix = "";
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "PZCheesy V1");
             });
         }
     }
