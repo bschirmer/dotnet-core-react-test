@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj": {}
+    "E:\\Development\\PatientZero\\PZCheesy.UnitTests\\PZCheesy.UnitTests.csproj": {}
   },
   "projects": {
-    "e:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj": {
+    "E:\\Development\\PatientZero\\PZCheesy.UnitTests\\PZCheesy.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj",
-        "projectName": "PZCheesy.Core",
-        "projectPath": "e:\\Development\\PatientZero\\PZCheesy.Core\\PZCheesy.Core.csproj",
+        "projectUniqueName": "E:\\Development\\PatientZero\\PZCheesy.UnitTests\\PZCheesy.UnitTests.csproj",
+        "projectName": "PZCheesy.UnitTests",
+        "projectPath": "E:\\Development\\PatientZero\\PZCheesy.UnitTests\\PZCheesy.UnitTests.csproj",
         "packagesPath": "C:\\Users\\bmsch\\.nuget\\packages\\",
-        "outputPath": "e:\\Development\\PatientZero\\PZCheesy.Core\\obj\\",
+        "outputPath": "E:\\Development\\PatientZero\\PZCheesy.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -21,14 +21,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netcoreapp3.1": {
             "projectReferences": {}
           }
         },
@@ -39,17 +39,23 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netcoreapp3.1": {
           "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
+              "version": "[16.2.0, )"
             },
-            "System.Threading.Tasks.Extensions": {
+            "coverlet.collector": {
               "target": "Package",
-              "version": "[4.5.3, )"
+              "version": "[1.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             }
           },
           "imports": [
@@ -62,6 +68,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
