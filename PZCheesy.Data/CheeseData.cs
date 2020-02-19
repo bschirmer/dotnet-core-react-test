@@ -57,7 +57,7 @@ namespace PZCheesy.Data
         private static Cheese _cheese5 = new Cheese()
         {
             Id = 5,
-            Name = "Fromage A Raclette",
+            Name = "Red Leicester",
             Colour = "Orange",
             Texture = "Crumbly and Dense",
             Flavour = "Burnt Caramel, Full-Flavored, Sweet",
