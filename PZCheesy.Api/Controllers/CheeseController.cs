@@ -22,7 +22,7 @@ namespace PZCheesy.Api.Controllers
             this._cheeseService = cheeseService;
         }
 
-        [HttpGet("")]
+        [HttpGet("all")]
         public IEnumerable<Cheese> GetAllCheeseAsync()
         {
             var cheese = _cheeseService.GetAllCheese();

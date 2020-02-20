@@ -15,7 +15,7 @@ namespace PZCheesy.Api.Controllers
             this._cheeseService = cheeseService;
         }
 
-        [HttpGet("all")]
+        [HttpGet("")]
         public IEnumerable<Cheese> GetAllCheeseAsync()
         {
             var cheese = _cheeseService.GetAllCheese();

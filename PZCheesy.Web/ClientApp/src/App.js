@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
-
-import './custom.css'
+import { CheeseCard } from './components/CheeseCard';
+import { Header } from './components/Header';
+import { NavBar } from './components/NavBar';
+import { CheeseOfTheDay } from './components/CheeseOfTheDay';
 
 export default class App extends Component {
   static displayName = App.name;
 
   render () {
     return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-      </Layout>
+        <div>
+            <Header />
+            <NavBar />
+            <CheeseOfTheDay />
+            <CheeseCard />
+        </div>
     );
   }
 }
