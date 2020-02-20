@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using PZCheesy.Core.Services;
 using PZCheesy.Services;
 
@@ -25,11 +26,17 @@ namespace PZCheesy.Web
 
             services.AddControllersWithViews();
             services.AddTransient<ICheeseService, CheeseService>();
+            services.AddTransient<ICartService, CartService>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
+            });
+
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "PZCheesy", Version = "v1" });
             });
         }
 
@@ -68,6 +75,16 @@ namespace PZCheesy.Web
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
+            });
+
+            /**
+            * Swagger code was borrowed from https://medium.com/swlh/building-a-nice-multi-layer-net-core-3-api-c68a9ef16368
+            */
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = "";
+                c.SwaggerEndpoint("/swagger", "PZCheesy V1");
             });
         }
     }

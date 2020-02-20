@@ -5,6 +5,7 @@ namespace PZCheesy.Data
 {
     /**
      *  As this is POC, the data is hardcoded
+     *  This would usually be where all database calls are done
      */
     public static class CheeseData
     {

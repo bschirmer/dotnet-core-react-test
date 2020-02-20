@@ -14,6 +14,7 @@ namespace PZCheesy.Core.Models
         public string Aroma { get; set; }
         public decimal Price { get; set; }
         public string PictureRef { get; set; }
+        public decimal Quantity { get; set; }
 
     }
 }

@@ -31,7 +31,6 @@ export class CheeseCard extends Component {
         fetch('cheese')
             .then(results => { return results.json() })
             .then(data => {
-                console.log(data);
                 let allCheeses = data.map((cheese) => {
                     return (
                         <Card key={cheese.id}>
