@@ -11,20 +11,20 @@ namespace PZCheesy.Data
     public class CartData
     {
         public CartData() {
-            this.cartItems = new List<Cheese>();
+            this.cartItems = new List<Item>();
         }
 
-        private List<Cheese> cartItems;
-        public List<Cheese> GetCartItems() => cartItems;
-        public void AddItemToCart(Cheese cheese)
+        private List<Item> cartItems;
+        public List<Item> GetCartItems() => cartItems;
+        public void AddItemToCart(Item item)
         {
             // Ultimately this would take an Item and not a Cheese
-            cartItems.Add(cheese);
+            cartItems.Add(item);
         }
 
-        public bool RemoveItemFromCart(Cheese cheese)
+        public bool RemoveItemFromCart(Item item)
         {
-           return cartItems.Remove(cheese);
+           return cartItems.Remove(item);
         }
 
         public void EmptyCart() { cartItems.Clear(); }

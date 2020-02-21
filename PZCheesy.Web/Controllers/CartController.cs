@@ -5,7 +5,7 @@ using PZCheesy.Core.Services;
 
 namespace PZCheesy.Api.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CartController : ControllerBase
     {
@@ -15,18 +15,19 @@ namespace PZCheesy.Api.Controllers
             this.cartService = cartService;
         }
 
-        //[HttpGet("/add/{id}")]
-        //public void AddToCart()
-        //{
-        //    var cheese = cartService.AddToCart();
+        [HttpPost("/add")]
+        public string AddToCart(string sku)
+        {
+            System.Console.WriteLine(sku);
+            //var cheese = cartService.AddToCart();
 
-        //    return cheese.ToArray();
-        //}
+            return sku;
+        }
 
-        [HttpGet("/cart/count")]
+        [HttpGet("/count")]
         public int GetCartCount()
         {
-            return cartService.GetCartItems().Count; 
+            return 5; 
         }
 
     }

@@ -5,7 +5,7 @@ using PZCheesy.Core.Services;
 
 namespace PZCheesy.Api.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CheeseController : ControllerBase
     {
@@ -15,11 +15,10 @@ namespace PZCheesy.Api.Controllers
             this._cheeseService = cheeseService;
         }
 
-        [HttpGet("")]
-        public IEnumerable<Cheese> GetAllCheeseAsync()
+        [HttpGet("/all")]
+        public IEnumerable<Cheese> GetAllCheese()
         {
             var cheese = _cheeseService.GetAllCheese();
-
             return cheese.ToArray();
         }
 
