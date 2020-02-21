@@ -23,10 +23,13 @@ namespace PZCheesy.Services
          * I wanted to add a better return type for these services,
          * something that had a response and message. But I'm unsure of what that looks like
          */
-        public void AddToCart(Item item)
+        public bool AddToCart(string sku)
         {
-            Console.WriteLine(item.SKU);
-            cartItems.AddItemToCart(item);
+            var cheese = CheeseData.GetAllCheese().FirstOrDefault(x => x.SKU == sku);
+            if (cheese == null) return false;
+            
+            cartItems.AddItemToCart(cheese);
+            return true;
         }
 
         public List<Item> GetCartItems()

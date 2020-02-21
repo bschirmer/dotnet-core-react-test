@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZCheesy.UnitTests", "PZChe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZCheesy.Web", "PZCheesy.Web\PZCheesy.Web.csproj", "{15C38786-378D-4298-A035-BB33B4D2D6A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PZCheesy.Api", "PZCheesy.Api\PZCheesy.Api.csproj", "{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{15C38786-378D-4298-A035-BB33B4D2D6A4}.Release|x64.Build.0 = Release|Any CPU
 		{15C38786-378D-4298-A035-BB33B4D2D6A4}.Release|x86.ActiveCfg = Release|Any CPU
 		{15C38786-378D-4298-A035-BB33B4D2D6A4}.Release|x86.Build.0 = Release|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Debug|x64.Build.0 = Debug|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Debug|x86.Build.0 = Debug|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Release|x64.ActiveCfg = Release|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Release|x64.Build.0 = Release|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Release|x86.ActiveCfg = Release|Any CPU
+		{2A23A5BA-3EFE-4C17-9F2E-7262A258EE9A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
