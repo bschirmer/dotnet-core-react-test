@@ -5,11 +5,12 @@ namespace PZCheesy.Data
 {
     /**
      *  As this is POC, the data is hardcoded
+     *  This would usually be where all database calls are done
      */
     public static class CheeseData
     {
         private static Cheese _cheese1 = new Cheese() { 
-            Id = 1, 
+            SKU = "1", 
             Name = "Halloumi", 
             Colour = "White",
             Texture = "Chewy, Creamy, Firm and Springy",
@@ -20,7 +21,7 @@ namespace PZCheesy.Data
 
         private static Cheese _cheese2 = new Cheese()
         {
-            Id = 2,
+            SKU = "2",
             Name = "Provolone",
             Colour = "Pale Yellow",
             Texture = "Firm, Grainy and Open",
@@ -32,7 +33,7 @@ namespace PZCheesy.Data
 
         private static Cheese _cheese3 = new Cheese()
         {
-            Id = 3,
+            SKU = "3",
             Name = "Blue Vein",
             Colour = "Blue",
             Texture = "Creamy",
@@ -44,7 +45,7 @@ namespace PZCheesy.Data
 
         private static Cheese _cheese4 = new Cheese()
         {
-            Id = 4,
+            SKU = "4",
             Name = "Fromage A Raclette",
             Colour = "Pale Yellow",
             Texture = "Creamy, Firm, Open and Smooth",
@@ -56,7 +57,7 @@ namespace PZCheesy.Data
 
         private static Cheese _cheese5 = new Cheese()
         {
-            Id = 5,
+            SKU = "5",
             Name = "Red Leicester",
             Colour = "Orange",
             Texture = "Crumbly and Dense",

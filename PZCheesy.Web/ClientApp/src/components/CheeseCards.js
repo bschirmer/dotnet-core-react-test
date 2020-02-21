@@ -7,7 +7,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-export class CheeseCard extends Component {
+
+export class CheeseCards extends Component {
     constructor(props) {
         super(props);
 
@@ -28,10 +29,9 @@ export class CheeseCard extends Component {
     }
 
     componentDidMount() {
-        fetch('cheese')
+        fetch('/all')
             .then(results => { return results.json() })
             .then(data => {
-                console.log(data);
                 let allCheeses = data.map((cheese) => {
                     return (
                         <Card key={cheese.id}>
@@ -57,7 +57,7 @@ export class CheeseCard extends Component {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={() => { alert("This should be a props callback to add to cart"); }} >
+                                <Button size="small" color="primary" onClick={() => { this.props.addToCart(cheese.sku) }} >
                                     Add to Cart
                                 </Button>
                             </CardActions>

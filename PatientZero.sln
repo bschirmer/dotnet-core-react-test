@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZCheesy.Api", "PZCheesy.Api\PZCheesy.Api.csproj", "{340FFD99-A410-4F5A-AE3E-24419C94F00B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZCheesy.Core", "PZCheesy.Core\PZCheesy.Core.csproj", "{684F04CE-A25C-459A-BD08-8EEA053304F3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZCheesy.Data", "PZCheesy.Data\PZCheesy.Data.csproj", "{B213258B-7258-477B-9DBF-746C0B513F4C}"
@@ -13,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZCheesy.Services", "PZChee
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZCheesy.UnitTests", "PZCheesy.UnitTests\PZCheesy.UnitTests.csproj", "{831E8FDC-26DC-4F40-9D25-26AAF21E178E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PZCheesy.Web", "PZCheesy.Web\PZCheesy.Web.csproj", "{15C38786-378D-4298-A035-BB33B4D2D6A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZCheesy.Web", "PZCheesy.Web\PZCheesy.Web.csproj", "{15C38786-378D-4298-A035-BB33B4D2D6A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,18 +23,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Debug|x64.Build.0 = Debug|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Debug|x86.Build.0 = Debug|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Release|x64.ActiveCfg = Release|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Release|x64.Build.0 = Release|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Release|x86.ActiveCfg = Release|Any CPU
-		{340FFD99-A410-4F5A-AE3E-24419C94F00B}.Release|x86.Build.0 = Release|Any CPU
 		{684F04CE-A25C-459A-BD08-8EEA053304F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{684F04CE-A25C-459A-BD08-8EEA053304F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{684F04CE-A25C-459A-BD08-8EEA053304F3}.Debug|x64.ActiveCfg = Debug|Any CPU
