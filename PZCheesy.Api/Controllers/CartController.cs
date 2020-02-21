@@ -16,12 +16,10 @@ namespace PZCheesy.Api.Controllers
         }
 
         [HttpPost("/cart/add")]
-        public string AddToCart(string sku)
+        public bool AddToCart(string sku)
         {
             // Get all cheeses
-
-
-            return sku;
+            return this.cartService.AddToCart(sku);
         }
 
         [HttpGet("/cart/count")]
