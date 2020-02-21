@@ -18,7 +18,6 @@ namespace PZCheesy.Data
         public List<Item> GetCartItems() => cartItems;
         public void AddItemToCart(Item item)
         {
-            // Ultimately this would take an Item and not a Cheese
             cartItems.Add(item);
         }
 

@@ -8,7 +8,7 @@ namespace PZCheesy.Core.Services
 {
     public interface ICartService
     {
-        void AddToCart(Item item);
+        bool AddToCart(string sku);
         void RemoveFromCart(Item item);
         void UpdateQuantity(Item item, decimal quantity);
 
