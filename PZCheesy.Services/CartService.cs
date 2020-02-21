@@ -14,10 +14,10 @@ namespace PZCheesy.Services
      */
     public class CartService : ICartService
     {
-        private CartData cartItems;
+        private List<Item> cartItems;
 
         public CartService() {
-            cartItems = new CartData();
+            cartItems = CartData.GetCartItems();
         }
         /**
          * I wanted to add a better return type for these services,
@@ -25,31 +25,32 @@ namespace PZCheesy.Services
          */
         public bool AddToCart(string sku)
         {
+            // I would make this more generic for anythign more than a POC
             var cheese = CheeseData.GetAllCheese().FirstOrDefault(x => x.SKU == sku);
             if (cheese == null) return false;
-            
-            cartItems.AddItemToCart(cheese);
+
+            CartData.AddItemToCart(cheese);
             return true;
         }
 
         public List<Item> GetCartItems()
         {
-            return cartItems.GetCartItems();
+            return CartData.GetCartItems();
         }
 
         public Item GetCartItem(string sku)
         {
-            return cartItems.GetCartItems().FirstOrDefault(x => x.SKU == sku);
+            return CartData.GetCartItems().FirstOrDefault(x => x.SKU == sku);
         }
 
         public void RemoveFromCart(Item item)
         {
-            cartItems.RemoveItemFromCart(item);
+            CartData.RemoveItemFromCart(item);
         }
 
         public void UpdateQuantity(Item item, decimal quantity)
         {
-            var cartItem = cartItems.GetCartItems().FirstOrDefault(x => x.SKU == item.SKU);
+            var cartItem = CartData.GetCartItems().FirstOrDefault(x => x.SKU == item.SKU);
             if (cartItem == null) return;
 
             cartItem.Quantity = quantity;

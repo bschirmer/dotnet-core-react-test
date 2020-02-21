@@ -10,32 +10,42 @@
         "tags": [
           "Cart"
         ],
-        "parameters": [
-          {
-            "name": "sku",
-            "in": "query",
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Item"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Item"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Item"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string"
+                  "type": "boolean"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "type": "boolean"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "string"
+                  "type": "boolean"
                 }
               }
             }
@@ -116,6 +126,24 @@
   },
   "components": {
     "schemas": {
+      "Item": {
+        "type": "object",
+        "properties": {
+          "sku": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "quantity": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "Cheese": {
         "type": "object",
         "properties": {
