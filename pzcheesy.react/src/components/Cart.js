@@ -20,7 +20,7 @@ export class Cart extends Component {
         this.getCartCount = this.getCartCount.bind(this);
         this.openCartDraw = this.openCartDraw.bind(this);
         this.closeCartDraw = this.closeCartDraw.bind(this);
-        this.reloadCartItems = this.reloadCartItems.bind(this);
+        this.deleteCartItem = this.deleteCartItem.bind(this);
     }
 
     getCartCount() {
@@ -55,6 +55,7 @@ export class Cart extends Component {
     componentDidUpdate() {
         if (this.props.updateCartCount) {
             this.getCartCount();
+            this.getCartItems();
             if(this.state.cartItems.length === 0 && this.state.isCartDrawOpen){
                 this.setState({isCartDrawOpen: false});
             }
@@ -70,8 +71,24 @@ export class Cart extends Component {
         this.setState({isCartDrawOpen: false}); 
     }
 
-    reloadCartItems(){
-        this.setState({ reloadCart: true });
+    deleteCartItem(id){
+        fetch('https://localhost:5001/cart/deleteItem', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                Id: Number(id)
+            })
+        })
+        .then(results => { return results.json() })
+        .then(data => {
+           if(data){
+                this.setState({ reloadCart: true });
+           }
+        })
+        .catch((e) => console.log(e));
     }
 
     render() {
@@ -79,7 +96,7 @@ export class Cart extends Component {
         let cartList;
         if(this.state.cartItems.length > 0){
             cartList = this.state.cartItems.map((cartItem) => {
-                return <CartItem cartItem={cartItem} reloadCartItems={this.reloadCartItems}/>
+                return <CartItem cartItem={cartItem} deleteCartItem={this.deleteCartItem}/>
             })
         } else {
             cartList = <div>Your cart is empty</div>
@@ -95,7 +112,9 @@ export class Cart extends Component {
         return (
             <div>
                 <Button onClick={(e) => this.openCartDraw(e)}>Cart ({this.state.cartCount})</Button>
-                <Drawer anchor="right" open={this.state.isCartDrawOpen} onClose={(e) => this.closeCartDraw(e)}>
+                <Drawer anchor="right" 
+                        open={this.state.isCartDrawOpen} 
+                        onClose={(e) => this.closeCartDraw(e)}>
                     <List>
                         {cartList}
                     </List>

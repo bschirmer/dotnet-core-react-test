@@ -49,24 +49,7 @@ class CartItem extends Component {
     }
 
     handleDeleteButtonClick(id){
-        fetch('https://localhost:5001/cart/deleteItem', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    Id: Number(id)
-                })
-            })
-            .then(results => { return results.json() })
-            .then(data => {
-               if(data){
-                   this.props.reloadCartItems();
-               }
-            })
-            .catch((e) => console.log(e));
-        
+        this.props.deleteCartItem(id);
     }
 
     calculateTotalCost(price, quantity){

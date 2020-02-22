@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Cart } from './components/Cart';
 import { CheeseOfTheDay } from './components/CheeseOfTheDay';
 import { CheeseCards } from './components/CheeseCards';
+import './App.css';
 
 export default class App extends Component {
     constructor() {
