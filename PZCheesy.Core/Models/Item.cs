@@ -6,7 +6,8 @@ namespace PZCheesy.Core.Models
 {
     public class Item
     {
-        public string SKU { get; set; } //This is a unique identifier 
+        public int Id { get; set; } //This is a unique identifier per item
+        public string SKU { get; set; } //This is a unique identifier per product
         public decimal Price { get; set; }
         public decimal Quantity { get; set; }
     }

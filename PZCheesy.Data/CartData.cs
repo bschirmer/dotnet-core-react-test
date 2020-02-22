@@ -12,6 +12,7 @@ namespace PZCheesy.Data
     {
         private static List<Item> cartItems = new List<Item>();
         public  static List<Item> GetCartItems() => cartItems;
+        public  static int GetCartItemCount() => cartItems.Count;
         public static void AddItemToCart(Item item)
         {
             cartItems.Add(item);
