@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import CartItem from './CartItem';
+import { Typography } from '@material-ui/core';
 
 export class Cart extends Component {
     constructor(props) {
@@ -12,7 +13,8 @@ export class Cart extends Component {
             cartCount: 0,
             cartItems: [],
             isCartDrawOpen: false,
-            reloadCart: false
+            reloadCart: false,
+            checkoutMessage: false
         }
 
         this.getCartCount = this.getCartCount.bind(this);
@@ -83,6 +85,13 @@ export class Cart extends Component {
             cartList = <div>Your cart is empty</div>
         }
 
+        let checkoutMessage;
+        if(this.state.checkoutMessage){
+            checkoutMessage = <Typography>
+                                This is just a demo store!
+                              </Typography>
+        }
+
         return (
             <div>
                 <Button onClick={(e) => this.openCartDraw(e)}>Cart ({this.state.cartCount})</Button>
@@ -90,6 +99,10 @@ export class Cart extends Component {
                     <List>
                         {cartList}
                     </List>
+                    <Button size="small" color="primary" onClick={() => { this.setState({checkoutMessage: true}) }} >
+                            Go to Checkout
+                    </Button>
+                    {checkoutMessage}
                 </Drawer>
             </div>
         );
