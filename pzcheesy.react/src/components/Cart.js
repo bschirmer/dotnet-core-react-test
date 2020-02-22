@@ -33,9 +33,6 @@ export class Cart extends Component {
     }
 
     getCartItems() {
-        // This fetch gets all cart items but not cheese,
-        // this would be one call in a real app
-        // This didnt feel right when i wrote it
         fetch('https://localhost:5001/cart/all')
         .then(results => {
             return results.json();

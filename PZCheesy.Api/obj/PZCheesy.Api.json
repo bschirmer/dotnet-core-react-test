@@ -124,7 +124,7 @@
       }
     },
     "/cart/updateItem": {
-      "put": {
+      "post": {
         "tags": [
           "Cart"
         ],
