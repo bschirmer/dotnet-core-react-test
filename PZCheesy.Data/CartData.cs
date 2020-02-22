@@ -8,25 +8,22 @@ namespace PZCheesy.Data
      *  For simplicity, the data will be kept in memory
      *  This would usually be where all database calls are done
      */
-    public class CartData
+    public static class CartData
     {
-        public CartData() {
-            this.cartItems = new List<Item>();
-        }
-
-        private List<Item> cartItems;
-        public List<Item> GetCartItems() => cartItems;
-        public void AddItemToCart(Item item)
+        private static List<Item> cartItems = new List<Item>();
+        public  static List<Item> GetCartItems() => cartItems;
+        public  static int GetCartItemCount() => cartItems.Count;
+        public static void AddItemToCart(Item item)
         {
             cartItems.Add(item);
         }
 
-        public bool RemoveItemFromCart(Item item)
+        public static bool RemoveItemFromCart(Item item)
         {
            return cartItems.Remove(item);
         }
 
-        public void EmptyCart() { cartItems.Clear(); }
+        public static void EmptyCart() { cartItems.Clear(); }
 
     }
 }

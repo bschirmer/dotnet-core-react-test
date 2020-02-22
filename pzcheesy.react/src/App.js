@@ -1,42 +1,54 @@
 import React, { Component } from 'react';
 import { Header } from './components/Header';
-import { NavBar } from './components/NavBar';
+import { Cart } from './components/Cart';
 import { CheeseOfTheDay } from './components/CheeseOfTheDay';
 import { CheeseCards } from './components/CheeseCards';
+import './App.css';
 
 export default class App extends Component {
     constructor() {
         super();
 
         this.state = {
-            updateCartCount: false
+            updateCartCount: false,
+            reloadCart: false
         }
+
+        this.addToCart = this.addToCart.bind(this);
+        this.resetCartCountUpdate = this.resetCartCountUpdate.bind(this);
     }
 
     // I was unsure of how to pass data properly in react
     // My solution is to pass this function as a callback to the cheese cards
     // then update the state and force a re-render to update child components
-    addToCart(sku) {
-        fetch('/add', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                SKU: sku
+    addToCart(sku, quantity) {
+        fetch('https://localhost:5001/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    SKU: sku,
+                    Quantity: quantity
+                })
             })
-        })
             .then(results => { return results.json() })
-            .then(data => { console.log(data) })
-            .catch ((e) => console.log(e));
+            .catch((e) => console.log(e));
+
+        this.setState({ updateCartCount: true }, () => console.log("update cart count " + this.state.updateCartCount) );
+        
     }
 
-    render () {
+    resetCartCountUpdate() {
+        this.setState({ updateCartCount: false });
+    }
+
+    render() {
         return (
             <div>
                 <Header />
-                <NavBar />
+                <Cart updateCartCount={this.state.updateCartCount} resetCartCountUpdate={this.resetCartCountUpdate} />
                 <CheeseOfTheDay />
                 <CheeseCards addToCart={this.addToCart} />
             </div>

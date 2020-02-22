@@ -17,7 +17,9 @@ namespace PZCheesy.Data
             Flavour = "Salty, Savory, Tangy",
             Aroma = "Strong",
             Price = 31.01M, 
-            PictureRef = "https://healthyrecipesblogs.com/wp-content/uploads/2011/05/grilled-halloumi-1.jpg" };
+            PictureRef = "https://healthyrecipesblogs.com/wp-content/uploads/2011/05/grilled-halloumi-1.jpg" ,
+            Quantity = 0
+        };
 
         private static Cheese _cheese2 = new Cheese()
         {
@@ -28,7 +30,8 @@ namespace PZCheesy.Data
             Flavour = "Buttery, Mild, Sharp, Spicy, Sweet, Tangy",
             Aroma = "Pleasant",
             Price = 7.27M,
-            PictureRef = "https://cdn.tridge.com/image/original/7f/df/f8/7fdff890e9a9a26bdc03368b60324e54e5527da9.jpg"
+            PictureRef = "https://cdn.tridge.com/image/original/7f/df/f8/7fdff890e9a9a26bdc03368b60324e54e5527da9.jpg",
+            Quantity = 0
         };
 
         private static Cheese _cheese3 = new Cheese()
@@ -40,7 +43,8 @@ namespace PZCheesy.Data
             Flavour = "Salty, Sharp, Tangy",
             Aroma = "Stinky, Strong",
             Price = 33.50M,
-            PictureRef = "https://3.imimg.com/data3/UB/LL/MY-3052025/blue-cheese-danish-range-250x250.jpg"
+            PictureRef = "https://3.imimg.com/data3/UB/LL/MY-3052025/blue-cheese-danish-range-250x250.jpg",
+            Quantity = 0
         };
 
         private static Cheese _cheese4 = new Cheese()
@@ -52,7 +56,8 @@ namespace PZCheesy.Data
             Flavour = "Acidic, Milky, Nutty, Sweet",
             Aroma = "Aromatic, Fruity, Pleasant",
             Price = 64.90M,
-            PictureRef = "https://cdn.shopify.com/s/files/1/0063/4683/4031/products/raclette.jpg?v=1548178785"
+            PictureRef = "https://cdn.shopify.com/s/files/1/0063/4683/4031/products/raclette.jpg?v=1548178785",
+            Quantity = 0
         };
 
         private static Cheese _cheese5 = new Cheese()
@@ -64,7 +69,8 @@ namespace PZCheesy.Data
             Flavour = "Burnt Caramel, Full-Flavored, Sweet",
             Aroma = "Rich",
             Price = 24.99M,
-            PictureRef = "https://www.igourmet.com/images/products/red_leicester_taw_valley.jpg"
+            PictureRef = "https://www.igourmet.com/images/products/red_leicester_taw_valley.jpg",
+            Quantity = 0
         };
 
         private static List<Cheese> AllCheese = new List<Cheese>() { _cheese1, _cheese2, _cheese3, _cheese4, _cheese5 };

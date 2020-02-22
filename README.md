@@ -1,6 +1,14 @@
 # dotnet-core-react-test
 A quick and simple app to explore building a .net core/react app
 
+
+## A few notes
+There are a few things that I feel I haven't developed correctly....
+unit tests
+data structure, not sure how to structure the data without a database, for instance, cart data v cheese data
+Because of the POC i used static data, which means it add more than 1 of the same item
+
+
 # Design
 ## Back end
 API end points

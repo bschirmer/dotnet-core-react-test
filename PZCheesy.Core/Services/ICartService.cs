@@ -8,11 +8,10 @@ namespace PZCheesy.Core.Services
 {
     public interface ICartService
     {
-        bool AddToCart(string sku);
-        void RemoveFromCart(Item item);
-        void UpdateQuantity(Item item, decimal quantity);
-
-        List<Item> GetCartItems();
-        Item GetCartItem(string sku);
+        bool AddToCart(Item item);
+        bool RemoveFromCart(Item item);
+        Item UpdateQuantity(Item item);
+        List<Cheese> GetCartItems(); // This would be more generic in real app
+        Item GetCartItem(int id);
     }
 }
