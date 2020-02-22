@@ -46,7 +46,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
+            <div id="app">
                 <Header />
                 <Cart updateCartCount={this.state.updateCartCount} resetCartCountUpdate={this.resetCartCountUpdate} />
                 <CheeseOfTheDay />
