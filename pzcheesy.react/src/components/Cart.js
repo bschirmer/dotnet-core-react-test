@@ -11,12 +11,14 @@ export class Cart extends Component {
         this.state = {
             cartCount: 0,
             cartItems: [],
-            isCartDrawOpen: false
+            isCartDrawOpen: false,
+            reloadCart: false
         }
 
         this.getCartCount = this.getCartCount.bind(this);
         this.openCartDraw = this.openCartDraw.bind(this);
         this.closeCartDraw = this.closeCartDraw.bind(this);
+        this.reloadCartItems = this.reloadCartItems.bind(this);
     }
 
     getCartCount() {
@@ -45,12 +47,16 @@ export class Cart extends Component {
 
     componentDidMount() {
         this.getCartCount();
+        this.setState({ reloadCart: false});
     }
 
     componentDidUpdate() {
         if (this.props.updateCartCount) {
             this.getCartCount();
-        }
+            if(this.state.cartItems.length === 0 && this.state.isCartDrawOpen){
+                this.setState({isCartDrawOpen: false});
+            }
+        }        
     }   
     
     openCartDraw(){
@@ -59,7 +65,11 @@ export class Cart extends Component {
     }
     
     closeCartDraw(){
-        this.setState({isCartDrawOpen: false});
+        this.setState({isCartDrawOpen: false}); 
+    }
+
+    reloadCartItems(){
+        this.setState({ reloadCart: true });
     }
 
     render() {
@@ -67,7 +77,7 @@ export class Cart extends Component {
         let cartList;
         if(this.state.cartItems.length > 0){
             cartList = this.state.cartItems.map((cartItem) => {
-                return <CartItem cartItem={cartItem}/>
+                return <CartItem cartItem={cartItem} reloadCartItems={this.reloadCartItems}/>
             })
         } else {
             cartList = <div>Your cart is empty</div>

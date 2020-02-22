@@ -9,7 +9,8 @@ export default class App extends Component {
         super();
 
         this.state = {
-            updateCartCount: false
+            updateCartCount: false,
+            reloadCart: false
         }
 
         this.addToCart = this.addToCart.bind(this);

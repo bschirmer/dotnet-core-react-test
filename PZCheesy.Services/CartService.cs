@@ -82,10 +82,10 @@ namespace PZCheesy.Services
             return CartData.GetCartItems().FirstOrDefault(x => x.Id == id);
         }
 
-        public void RemoveFromCart(Item item)
+        public bool RemoveFromCart(Item item)
         {
             var cartItem = CartData.GetCartItems().FirstOrDefault(x => x.Id == item.Id);
-            CartData.RemoveItemFromCart(cartItem);
+            return  CartData.RemoveItemFromCart(cartItem);
         }
 
         public Item UpdateQuantity(Item item)

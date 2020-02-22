@@ -46,6 +46,26 @@ class CartItem extends Component {
                 this.setState({totalcost: totalcost});
             })
             .catch((e) => console.log(e));
+    }
+
+    handleDeleteButtonClick(id){
+        fetch('https://localhost:5001/cart/deleteItem', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    Id: Number(id)
+                })
+            })
+            .then(results => { return results.json() })
+            .then(data => {
+               if(data){
+                   this.props.reloadCartItems();
+               }
+            })
+            .catch((e) => console.log(e));
         
     }
 
@@ -71,10 +91,10 @@ class CartItem extends Component {
                 <ListItem  key={"UpdateButton" + this.state.cartItem.id}>
                     <InputLabel>Quantity(kg)</InputLabel>
                         <Input type="number" value={this.state.quantity || ''} onChange={(e) => this.handleInputChange(e)} />
-                        <Button size="small" color="primary" onClick={() => { this.handleButtonClick(this.state.cartItem.sku, this.state.quantity) }} >
+                        <Button size="small" color="primary" onClick={() => { this.handleButtonClick(this.state.cartItem.id, this.state.quantity) }} >
                             Update Cart
                         </Button>
-                        <Button size="small" color="primary" onClick={() => { this.handleDeleteButtonClick(this.state.cartItem.sku, this.state.quantity) }} >
+                        <Button size="small" color="primary" onClick={() => { this.handleDeleteButtonClick(this.state.cartItem.id, this.state.quantity) }} >
                             Delete
                         </Button>
                 </ListItem>

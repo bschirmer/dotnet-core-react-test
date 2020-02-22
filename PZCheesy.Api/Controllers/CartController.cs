@@ -37,9 +37,15 @@ namespace PZCheesy.Api.Controllers
         }
 
         [HttpPost("/cart/updateItem")]
-        public Item updateCartItem([FromBody] Item item)
+        public Item UpdateCartItem([FromBody] Item item)
         {
             return cartService.UpdateQuantity(item);
+        }
+
+        [HttpPost("/cart/deleteItem")]
+        public bool DeleteCartItem([FromBody] Item item)
+        {
+            return cartService.RemoveFromCart(item);
         }
 
     }
