@@ -1,8 +1,0 @@
-E:\Development\PatientZero\PZCheesy.Core\bin\Debug\netstandard2.0\PZCheesy.Core.deps.json
-E:\Development\PatientZero\PZCheesy.Core\bin\Debug\netstandard2.0\PZCheesy.Core.dll
-E:\Development\PatientZero\PZCheesy.Core\bin\Debug\netstandard2.0\PZCheesy.Core.pdb
-E:\Development\PatientZero\PZCheesy.Core\obj\Debug\netstandard2.0\PZCheesy.Core.csprojAssemblyReference.cache
-E:\Development\PatientZero\PZCheesy.Core\obj\Debug\netstandard2.0\PZCheesy.Core.AssemblyInfoInputs.cache
-E:\Development\PatientZero\PZCheesy.Core\obj\Debug\netstandard2.0\PZCheesy.Core.AssemblyInfo.cs
-E:\Development\PatientZero\PZCheesy.Core\obj\Debug\netstandard2.0\PZCheesy.Core.dll
-E:\Development\PatientZero\PZCheesy.Core\obj\Debug\netstandard2.0\PZCheesy.Core.pdb
