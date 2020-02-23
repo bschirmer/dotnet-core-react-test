@@ -9,7 +9,7 @@ namespace PZCheesy.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("AllowOrigin")]
+    [EnableCors("AllowOrigin")] // this is only for localhost!
     public class CheeseController : ControllerBase
     {
         private readonly ICheeseService _cheeseService;
@@ -24,12 +24,5 @@ namespace PZCheesy.Api.Controllers
             var cheese = _cheeseService.GetAllCheese();
             return cheese.ToArray();
         }
-
-        [HttpPost("/cheese/getBySku")]
-        public Cheese GetCheeseBySku([FromBody] Item item)
-        {
-            return _cheeseService.GetAllCheese().FirstOrDefault(x => x.SKU == item.SKU);
-        }
-
     }
 }
