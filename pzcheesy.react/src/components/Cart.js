@@ -54,7 +54,8 @@ export class Cart extends Component {
     }
 
     componentDidUpdate() {
-        if (this.props.updateCartCount) {
+        if (this.props.updateCartCount || this.state.reloadCart) {
+            this.setState({ reloadCart: false });
             this.getCartCount();
             this.getCartItems();
             if(this.state.cartItems.length === 0 && this.state.isCartDrawOpen){
@@ -87,13 +88,13 @@ export class Cart extends Component {
         .then(data => {
            if(data){
                 this.setState({ reloadCart: true });
+                // this.setState({ cartCount: this.state.cartCount - 1 });
            }
         })
         .catch((e) => console.log(e));
     }
 
     render() {
-        
         let cartList;
         if(this.state.cartItems.length > 0){
             cartList = this.state.cartItems.map((cartItem) => {

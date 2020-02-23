@@ -33,11 +33,11 @@ export default class App extends Component {
                     Quantity: quantity
                 })
             })
-            .then(results => { return results.json() })
+            .then(results => {
+                this.setState({ updateCartCount: true }, () => console.log("update cart count " + this.state.updateCartCount) );
+                return results.json()
+            })
             .catch((e) => console.log(e));
-
-        this.setState({ updateCartCount: true }, () => console.log("update cart count " + this.state.updateCartCount) );
-        
     }
 
     resetCartCountUpdate() {
