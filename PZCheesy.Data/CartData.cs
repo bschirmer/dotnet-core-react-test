@@ -20,7 +20,7 @@ namespace PZCheesy.Data
 
         public static bool RemoveItemFromCart(Item item)
         {
-           return cartItems.Remove(item);
+            return cartItems.Remove(item);
         }
 
         public static void EmptyCart() { cartItems.Clear(); }

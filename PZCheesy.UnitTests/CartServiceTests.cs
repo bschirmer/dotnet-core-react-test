@@ -39,22 +39,32 @@ namespace PZCheesy.UnitTests
 
             Assert.IsTrue(cartItems.Count == 0);
 
-            var item = new Item()
+            // Adding more than 1 item to test the correct item is removed
+            var item1 = new Item()
             {
                 Id = 1,
                 SKU = "2",
                 Quantity = 100
             };
 
-            cartService.AddToCart(item);
+            var item2 = new Item()
+            {
+                Id = 2,
+                SKU = "2",
+                Quantity = 100
+            };
+
+            cartService.AddToCart(item1);
+            cartService.AddToCart(item2);
             cartItems = cartService.GetCartItems();
 
-            Assert.AreEqual(1, cartItems.Count);
+            Assert.AreEqual(2, cartItems.Count);
 
-            cartService.RemoveFromCart(item);
+            cartService.RemoveFromCart(item1);
             cartItems = cartService.GetCartItems();
 
-            Assert.IsTrue(cartItems.Count == 0);
+            Assert.IsTrue(cartItems.Count == 1);
+            Assert.AreEqual(item2.Id, cartItems[0].Id);
 
             // because of static data, I have had to clean up after each test
             CartData.EmptyCart();

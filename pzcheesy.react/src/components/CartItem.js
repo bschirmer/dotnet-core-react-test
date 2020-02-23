@@ -40,7 +40,12 @@ class CartItem extends Component {
             })
             .then(results => { return results.json() })
             .then(data => {
-                this.setState({quantity: data.quantity});
+                this.setState({
+                    quantity: data.quantity,
+                    cartItem: {
+                        ...this.state.cartItem, // spread
+                        quantity: data.quantity
+                    }});
 
                 let totalcost = this.calculateTotalCost(this.state.cartItem.price, data.quantity)
                 this.setState({totalcost: totalcost});
