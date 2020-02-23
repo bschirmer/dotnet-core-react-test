@@ -34,7 +34,7 @@ export default class App extends Component {
                 })
             })
             .then(results => {
-                this.setState({ updateCartCount: true }, () => console.log("update cart count " + this.state.updateCartCount) );
+                this.setState({ updateCartCount: true });
                 return results.json()
             })
             .catch((e) => console.log(e));

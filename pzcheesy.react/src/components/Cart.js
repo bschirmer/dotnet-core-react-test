@@ -30,8 +30,7 @@ export class Cart extends Component {
                 return results.json()
             })
             .then(data => {
-                console.log("cartcount ",data);
-                this.setState({ cartCount: data }, () => console.log(data));
+                this.setState({ cartCount: data });
             })
             .catch((e) => console.log(e));
         this.props.resetCartCountUpdate();
@@ -43,7 +42,7 @@ export class Cart extends Component {
             return results.json();
         })
         .then(data => {
-            this.setState({ listKey: this.state.listKey + 1, cartItems: data }, () => console.log(this.state.cartItems));
+            this.setState({ listKey: this.state.listKey + 1, cartItems: data });
         })
         .catch((e) => console.log(e));
     }
@@ -93,7 +92,6 @@ export class Cart extends Component {
     }
 
     render() {
-        console.log("cart items! ", this.state.cartItems);
         let cartList;
         if(this.state.cartItems.length > 0){
             cartList = this.state.cartItems.map((cartItem) => {
