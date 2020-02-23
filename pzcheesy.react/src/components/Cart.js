@@ -14,8 +14,8 @@ export class Cart extends Component {
             cartCount: 0,
             cartItems: [],
             isCartDrawOpen: false,
-            reloadCart: false,
-            checkoutMessage: false
+            checkoutMessage: false,
+            listKey: 0 // used for re-render hack
         }
 
         this.getCartCount = this.getCartCount.bind(this);
@@ -43,19 +43,17 @@ export class Cart extends Component {
             return results.json();
         })
         .then(data => {
-            this.setState({ cartItems: data }, () => console.log(this.state.cartItems));
+            this.setState({ listKey: this.state.listKey + 1, cartItems: data }, () => console.log(this.state.cartItems));
         })
         .catch((e) => console.log(e));
     }
 
     componentDidMount() {
         this.getCartCount();
-        this.setState({ reloadCart: false});
     }
 
     componentDidUpdate() {
-        if (this.props.updateCartCount || this.state.reloadCart) {
-            this.setState({ reloadCart: false });
+        if (this.props.updateCartCount) {
             this.getCartCount();
             this.getCartItems();
             if(this.state.cartItems.length === 0 && this.state.isCartDrawOpen){
@@ -87,14 +85,15 @@ export class Cart extends Component {
         .then(results => { return results.json() })
         .then(data => {
            if(data){
-                this.setState({ reloadCart: true });
-                // this.setState({ cartCount: this.state.cartCount - 1 });
+                this.getCartCount();
+                this.getCartItems();
            }
         })
         .catch((e) => console.log(e));
     }
 
     render() {
+        console.log("cart items! ", this.state.cartItems);
         let cartList;
         if(this.state.cartItems.length > 0){
             cartList = this.state.cartItems.map((cartItem) => {
@@ -124,7 +123,7 @@ export class Cart extends Component {
                         open={this.state.isCartDrawOpen} 
                         onClose={(e) => this.closeCartDraw(e)}>
                     <div className="cart-list">
-                        <List>
+                        <List key={this.state.listKey}>
                             {cartList}
                         </List>
                     </div>
