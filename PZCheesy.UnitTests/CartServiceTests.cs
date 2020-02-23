@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using PZCheesy.Core.Models;
+using PZCheesy.Data;
 using PZCheesy.Services;
 
 namespace PZCheesy.UnitTests
@@ -25,6 +26,9 @@ namespace PZCheesy.UnitTests
             cartService.AddToCart(item);
             cartItems = cartService.GetCartItems();
             Assert.AreEqual(1, cartItems.Count);
+
+            // because of static data, I have had to clean up after each test
+            CartData.EmptyCart();
         }        
         
         [Test]
@@ -51,6 +55,9 @@ namespace PZCheesy.UnitTests
             cartItems = cartService.GetCartItems();
 
             Assert.IsTrue(cartItems.Count == 0);
+
+            // because of static data, I have had to clean up after each test
+            CartData.EmptyCart();
         }
 
         [Test]
@@ -79,6 +86,9 @@ namespace PZCheesy.UnitTests
             item = cartService.GetCartItem(item.Id);
 
             Assert.AreEqual(50, item.Quantity);
+
+            // because of static data, I have had to clean up after each test
+            CartData.EmptyCart();
         }
 
         [Test]
@@ -117,6 +127,9 @@ namespace PZCheesy.UnitTests
             cartItems = cartService.GetCartItems();
 
             Assert.AreEqual(3, cartItems.Count);
+
+            // because of static data, I have had to clean up after each test
+            CartData.EmptyCart();
         }
     }
 }

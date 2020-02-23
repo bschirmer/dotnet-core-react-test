@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import CartItem from './CartItem';
 import { Typography } from '@material-ui/core';
-
+import ShoppingCart from '@material-ui/icons/ShoppingCart';
 export class Cart extends Component {
     constructor(props) {
         super(props);
@@ -53,7 +54,8 @@ export class Cart extends Component {
     }
 
     componentDidUpdate() {
-        if (this.props.updateCartCount) {
+        if (this.props.updateCartCount || this.state.reloadCart) {
+            this.setState({ reloadCart: false });
             this.getCartCount();
             this.getCartItems();
             if(this.state.cartItems.length === 0 && this.state.isCartDrawOpen){
@@ -86,38 +88,47 @@ export class Cart extends Component {
         .then(data => {
            if(data){
                 this.setState({ reloadCart: true });
+                // this.setState({ cartCount: this.state.cartCount - 1 });
            }
         })
         .catch((e) => console.log(e));
     }
 
     render() {
-        
         let cartList;
         if(this.state.cartItems.length > 0){
             cartList = this.state.cartItems.map((cartItem) => {
                 return <CartItem cartItem={cartItem} deleteCartItem={this.deleteCartItem}/>
             })
         } else {
-            cartList = <div>Your cart is empty</div>
+            cartList = <div className="cart-list cart-message">Your cart is empty</div>
         }
 
         let checkoutMessage;
         if(this.state.checkoutMessage){
-            checkoutMessage = <Typography>
+            checkoutMessage = <Typography
+                                className="cart-message">
                                 This is just a demo store!
                               </Typography>
         }
 
         return (
-            <div>
-                <Button onClick={(e) => this.openCartDraw(e)}>Cart ({this.state.cartCount})</Button>
+            <div id="cart">
+                <Button id="cart-button" 
+                        variant="contained"
+                        startIcon={<ShoppingCart />}
+                        onClick={(e) => this.openCartDraw(e)}>
+                            Cart ({this.state.cartCount})
+                </Button>
                 <Drawer anchor="right" 
                         open={this.state.isCartDrawOpen} 
                         onClose={(e) => this.closeCartDraw(e)}>
-                    <List>
-                        {cartList}
-                    </List>
+                    <div className="cart-list">
+                        <List>
+                            {cartList}
+                        </List>
+                    </div>
+                    
                     <Button size="small" color="primary" onClick={() => { this.setState({checkoutMessage: true}) }} >
                             Go to Checkout
                     </Button>
