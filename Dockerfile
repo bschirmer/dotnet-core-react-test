@@ -56,4 +56,3 @@ WORKDIR /source
 
 COPY --from=build-backend /source/backend/out .
 ENTRYPOINT ["dotnet", "PZCheesy.Api.dll","--launch-profile Production"]
-
