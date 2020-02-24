@@ -40,7 +40,7 @@ class CheeseCard extends Component {
     }
 
     handleButtonClick(sku, quantity) {
-        if (this.state.totalCost == null || this.state.totalCost == 0) {
+        if (this.state.totalCost === null || this.state.totalCost === 0) {
             this.setState({ noQuantityError: "Please enter a value" });
         } else {
             this.props.addToCart(sku, quantity);
@@ -80,6 +80,7 @@ class CheeseCard extends Component {
                             className={this.styles.media}
                             src={this.state.cheese.pictureRef}
                             height="100px"
+                            alt={this.state.cheese.name}
                         />
                         <Typography variant="body2" color="textSecondary" component="p">
                             Colour: {this.state.cheese.colour} <br />
