@@ -36,6 +36,7 @@ There are a few things that were developed for POC only and I would have put mor
 2. Because of the above, I realised my unit tests could do with some improving. For instance, they could use a mock class with mock data which would tie in nicely with the real repositories.
 3. Data structure is stored in memory. For a real app, this would be a database. Furthermore, the data layer would be the only layer that interacts with the database.
 4. I would add proper error handling and proper API requests/responses, this would also improve the swagger.
+5. This POC is coded for a smaller screen, with more time, I would add code for all screen sizes
 
 As mentioned above, the swagger page could use some improving. Because of the static data and no test database, the swagger works but you have to add data with the /cart/add before trying to retrieve 
 
