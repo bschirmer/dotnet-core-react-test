@@ -12,6 +12,8 @@ Depending on your use, you may need `sudo` at the start of these commands
 4. run `docker run -dit -p <outward port>:80 <image-name>`
 5. navigate to `localhost:<outward-port>` in browser
 	 * This will have the back-end running
+6. navigate to `[repo]/pzcheesy.react` and repeat steps 3 and 5 with a different outward port
+     * This will have the front-end running
 
 **Running locally:**
 1. clone this repo 
