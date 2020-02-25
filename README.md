@@ -28,6 +28,7 @@ To start backed:
 7. run `npm start`
 8. navigate to `localhost:3000`
 	* this loads the front-end  
+	* because of networking issues, localhost may not work. If this is the case run `docker logs <container-id>` and run the IP it shows
 
 
 ## A few notes
