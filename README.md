@@ -32,8 +32,10 @@ To start backed:
 There are a few things that were developed for POC only and I would have put more time into if I had the chance. 
 1. After developing a working POC I learned about the Unit of Work pattern. As this is already working and because this is only a POC, I decided not to refactor and add it in. The repositories I added are not used, but would be used alongside unit of work if this were a real app. 
 2. Because of the above, I realised my unit tests could do with some improving. For instance, they could use a mock class with mock data which would tie in nicely with the real repositories.
-3. Data structure is stored in memory. For a real app, this would obviously be a database. Furthermore, the data layer would be the only layer that interacts with the database.
+3. Data structure is stored in memory. For a real app, this would be a database. Furthermore, the data layer would be the only layer that interacts with the database.
 4. I would add proper error handling and proper API requests/responses, this would also improve the swagger.
+
+As mentioned above, the swagger page could use some improving. Because of the static data and no test database, the swagger works but you have to add data with the /cart/add before trying to retrieve 
 
 ### Technology notes
 This is my first time using docker and I have only used react a handful of times. There are 2 dockerfiles, 1 in the root and 1 in the react project. Originally I had them combined but could not get everything running properly.
