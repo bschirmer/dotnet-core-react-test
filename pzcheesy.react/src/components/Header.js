@@ -6,7 +6,7 @@ export class Header extends Component {
             <div id="header">
                 <h1>
                     PZ Cheesy
-                    <img id="cheesy-logo" src="https://previews.123rf.com/images/vectorshots/vectorshots1507/vectorshots150701252/41973413-cartoon-cheese-dancing-vector.jpg"/>
+                    <img id="cheesy-logo" src="https://previews.123rf.com/images/vectorshots/vectorshots1507/vectorshots150701252/41973413-cartoon-cheese-dancing-vector.jpg" alt="Cartoon cheese logo with a cheesy grin" />
                 </h1>
             </div>
         );
